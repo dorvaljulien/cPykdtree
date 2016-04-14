@@ -7,6 +7,14 @@ to determine nearest neighbours, make radius search, etc.
 
 How to make it work:
 
+
+Add the cPykdtree directory to your PYTHONPATH:
+
+In bash, add this to your .bashrc
+   export PYTHONPATH = path/to/cPykdtree: $PYTHONPATH
+Then source your .bashrc
+
+
 If you have sudo permissions:
     - "sudo make" in the cPkdtree directory
     
@@ -29,18 +37,12 @@ LD_LIBRARY_PATH in your .bashrc.
 If you don't have sudo permissions:
 
     - Add to your .bashrc:
-      "export LD_LIBRARY_PATH = [path to cPykdtree directory]:$LD_LIBRARY_PATH"
+      	  export LD_LIBRARY_PATH = [path to cPykdtree directory]:$LD_LIBRARY_PATH
+          export CPYKDTREELIB = /path/to/cPykdtree/src	
+
       Then source it: "source ~/.bashrc"
     
-    - "make local" in the cPykdtree directory.
-    
-    - Update the lib_path variable in kdtree.py to point to the new
-      libkdtree.so as an absolute path. Example:
-           path = /home/dorval/cPykdtree/libkdtree.so
-    
-    - Place kdtree.py in a directory available to python, or update PYTHONPATH:
-      export PYTHONPATH = [ path to cPykdtree directory]: $PYTHONPATH
-      ( to be added to your .bashrc, then sourced )
+    - "make local" in the cPykdtree/src directory.
     
     - Test the tree by running kdtree.py
       -> python kdtree.py
